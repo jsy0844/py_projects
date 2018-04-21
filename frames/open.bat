@@ -1,0 +1,1 @@
+start /max E:\study_data\pyqt5_projects\frames\frames
