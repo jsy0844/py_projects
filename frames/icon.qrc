@@ -1,0 +1,6 @@
+<RCC>
+    <qresource>
+        <file>icons/foldericon.ico</file>
+        <file>icons/titleicon.ico</file>
+    </qresource>
+</RCC>

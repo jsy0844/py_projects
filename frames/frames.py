@@ -3,7 +3,7 @@
 """
 Module implementing Main_frames.
 """
-from PyQt5.QtWidgets import QMainWindow, QFileDialog,QApplication
+from PyQt5.QtWidgets import QMainWindow, QFileDialog,QApplication, QMessageBox
 
 from Ui_UI_frames import Ui_MainWindow
 import sys
@@ -15,8 +15,8 @@ class Main_frames(QMainWindow, Ui_MainWindow):
     """
     Class documentation goes here.
     """
-    fnamen = "ab"
-    filepath = "12"
+    fnamen = ""
+    filepath = ""
 
     def __init__(self, parent=None):
         """
@@ -49,22 +49,25 @@ class Main_frames(QMainWindow, Ui_MainWindow):
 
     def segm(self):
         global fnamen, filepath#使用全局变量获取文件名加路径
-        # print(fnamen)
-        fnamen2 = fnamen.replace('/', '\\')#replace替换/和\, \需要转义
-        filename = os.path.basename(fnamen2)#提前文件名
-        filepath = os.path.dirname(fnamen2)#提取文件路径
+        #print(fnamen)
+        try:
+            fnamen2 = fnamen.replace('/', '\\')#replace替换/和\, \需要转义
+            filename = os.path.basename(fnamen2)#提前文件名
+            filepath = os.path.dirname(fnamen2)#提取文件路径
 
-        picpath = filepath + "\\frames"
-        
-        if os.path.exists(picpath):
-            shutil.rmtree(picpath)
-        os.chdir(filepath) 
-              
-        os.mkdir(r"./frames/")
+            picpath = filepath + "\\frames"
+            
+            if os.path.exists(picpath):
+                shutil.rmtree(picpath)
+            os.chdir(filepath) 
+                
+            os.mkdir(r"./frames")
 
-        os.system("ffmpeg -i " + filename + " frames/out-%6d.jpg")
+            os.system("ffmpeg -i " + filename + " frames/out-%6d.jpg")
 
-        self.colBtn.setEnabled(True)
+            self.colBtn.setEnabled(True)
+        except Exception:
+            QMessageBox.warning(self, "No File", "No File was Selected!")
 
     def openFra(self):
         global filepath
