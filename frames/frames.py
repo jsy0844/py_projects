@@ -37,7 +37,7 @@ class Main_frames(QMainWindow, Ui_MainWindow):
         self.colBtn.clicked.connect(self.openFra)
 
     def openFile(self):
-        fname = QFileDialog.getOpenFileName(self, "Select Video", "./")
+        fname = QFileDialog.getOpenFileName(self, "Select Video", "./","video(*.avi *.mov *.mpeg *.mpg *.wmv *.mp4 *.264 *.265 *.flv)")
         self.fileText.setText(fname[0])
         global fnamen
         fnamen = fname[0]
@@ -62,12 +62,17 @@ class Main_frames(QMainWindow, Ui_MainWindow):
             os.chdir(filepath) 
                 
             os.mkdir(r"./frames")
-
-            os.system("ffmpeg -i " + filename + " frames/out-%6d.jpg")
-
-            self.colBtn.setEnabled(True)
         except Exception:
             QMessageBox.warning(self, "No File", "No File was Selected!")
+            return
+
+       
+        os.system("ffmpeg -i " + filename + " frames/out-%6d.jpg")
+        if os.path.exists(".\\frames\\out-000001.jpg"):
+            self.colBtn.setEnabled(True)
+        else:
+            QMessageBox.warning(self, "ffmpeg warning", "You need to add ffmpeg to your computer Environment Variables!")
+
 
     def openFra(self):
         global filepath
