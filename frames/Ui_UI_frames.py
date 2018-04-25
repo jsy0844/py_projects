@@ -32,28 +32,28 @@ class Ui_MainWindow(object):
 
         self.centralWidget = QWidget(MainWindow)
         self.centralWidget.setObjectName("centralWidget")
-        self.fileText = QTextBrowser(self.centralWidget)
-        self.fileText.setGeometry(80, 100, 421, 28)
 
         # 设置文件显示栏
+        self.fileText = QTextBrowser(self.centralWidget)
+        self.fileText.setGeometry(80, 100, 421, 28)        
         font.setPointSize(7)
         self.fileText.setFont(font)
         self.fileText.setObjectName("fileText")
-        self.LoadBtn = QPushButton(self.centralWidget)
-        self.LoadBtn.setGeometry(510, 100, 31, 31)
 
         # 设置选择文件按钮
+        self.LoadBtn = QPushButton(self.centralWidget)
+        self.LoadBtn.setGeometry(510, 98, 31, 31)        
         font.setWeight(50)
-        self.LoadBtn.setFont(font)
+        self.LoadBtn.setFont(font)#去除button边框
         self.LoadBtn.setAutoFillBackground(True)
-
+        self.LoadBtn.setFlat(True)
         LoBtn= QIcon()
         LoBtn.addPixmap(QPixmap(":/icons/foldericon.ico"), QIcon.Normal, QIcon.Off)
+
+        # 设置开始按钮
         self.LoadBtn.setIcon(LoBtn)
         self.LoadBtn.setIconSize(QSize(40, 40))
         self.LoadBtn.setObjectName("LoadBtn")
-
-        # 设置开始按钮
         self.staBtn = QPushButton(self.centralWidget)
         self.staBtn.setGeometry(200, 200, 81, 40)
         font.setPointSize(10)
