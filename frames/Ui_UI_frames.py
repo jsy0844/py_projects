@@ -23,6 +23,7 @@ class Ui_MainWindow(object):
         self.centralWidget = QtWidgets.QWidget(MainWindow)
         self.centralWidget.setObjectName("centralWidget")
 <<<<<<< HEAD
+<<<<<<< HEAD
         self.fileText = QtWidgets.QTextBrowser(self.centralWidget)
         self.fileText.setGeometry(QtCore.QRect(80, 60, 421, 31))
         font = QtGui.QFont()
@@ -50,6 +51,8 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setFamily("Arial")
 =======
+=======
+>>>>>>> parent of 1dc4a0a... 更新按钮边框
         self.fileText = QTextBrowser(self.centralWidget)
         self.fileText.setGeometry(80, 100, 421, 28)
 
