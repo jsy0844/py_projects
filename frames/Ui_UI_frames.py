@@ -1,87 +1,115 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'I:\py_projects\frames\UI_frames.ui'
+# Form implementation generated from reading ui file 'E:\study_data\py_projects\frames\UI_frames.ui'
 #
 # Created by: PyQt5 UI code generator 5.10.1
 #
 # WARNING! All changes made in this file will be lost!
 
-
-import icon_rc
-from PyQt5.QtGui import QIcon, QPixmap, QFont
-from PyQt5.QtWidgets import QWidget, QTextBrowser, QPushButton, QApplication, QMainWindow
-from PyQt5.QtCore import QSize, QCoreApplication, QMetaObject
-
-
-
+from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
-        # 设置标题
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(621, 345)
-
-        font = QFont()
+        font = QtGui.QFont()
         font.setFamily("Arial")
+        font.setBold(True)
         font.setWeight(75)
         MainWindow.setFont(font)
-
-        icon = QIcon()
-        icon.addPixmap(QPixmap(":/icons/titleicon.ico"), QIcon.Normal, QIcon.Off)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("titleicon.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
-
-        self.centralWidget = QWidget(MainWindow)
+        self.centralWidget = QtWidgets.QWidget(MainWindow)
         self.centralWidget.setObjectName("centralWidget")
-
-        # 设置文件显示栏
-        self.fileText = QTextBrowser(self.centralWidget)
-        self.fileText.setGeometry(80, 100, 421, 28)        
+        self.fileText = QtWidgets.QTextBrowser(self.centralWidget)
+        self.fileText.setGeometry(QtCore.QRect(80, 60, 421, 31))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
         font.setPointSize(7)
         self.fileText.setFont(font)
         self.fileText.setObjectName("fileText")
-
-        # 设置选择文件按钮
-        self.LoadBtn = QPushButton(self.centralWidget)
-        self.LoadBtn.setGeometry(510, 98, 31, 31)        
+        self.LoadBtn = QtWidgets.QPushButton(self.centralWidget)
+        self.LoadBtn.setGeometry(QtCore.QRect(510, 60, 31, 31))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setBold(False)
         font.setWeight(50)
-        self.LoadBtn.setFont(font)#去除button边框
+        self.LoadBtn.setFont(font)
+        self.LoadBtn.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
         self.LoadBtn.setAutoFillBackground(True)
-        self.LoadBtn.setFlat(True)
-        LoBtn= QIcon()
-        LoBtn.addPixmap(QPixmap(":/icons/foldericon.ico"), QIcon.Normal, QIcon.Off)
-
-        # 设置开始按钮
-        self.LoadBtn.setIcon(LoBtn)
-        self.LoadBtn.setIconSize(QSize(40, 40))
+        self.LoadBtn.setText("")
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap("foldericon.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.LoadBtn.setIcon(icon1)
+        self.LoadBtn.setIconSize(QtCore.QSize(40, 40))
         self.LoadBtn.setObjectName("LoadBtn")
-        self.staBtn = QPushButton(self.centralWidget)
-        self.staBtn.setGeometry(200, 200, 81, 40)
+        self.staBtn = QtWidgets.QPushButton(self.centralWidget)
+        self.staBtn.setGeometry(QtCore.QRect(200, 230, 91, 40))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
         font.setPointSize(10)
+        font.setBold(False)
         font.setWeight(50)
         self.staBtn.setFont(font)
         self.staBtn.setObjectName("staBtn")
-
-        # 设置查看按钮
-        self.colBtn = QPushButton(self.centralWidget)
-        self.colBtn.setGeometry(330, 200, 91, 40)
+        self.colBtn = QtWidgets.QPushButton(self.centralWidget)
+        self.colBtn.setGeometry(QtCore.QRect(320, 230, 101, 40))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setWeight(50)
         self.colBtn.setFont(font)
         self.colBtn.setObjectName("colBtn")
+        self.RechBox = QtWidgets.QCheckBox(self.centralWidget)
+        self.RechBox.setGeometry(QtCore.QRect(210, 120, 171, 27))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        font.setBold(False)
+        font.setWeight(50)
+        self.RechBox.setFont(font)
+        self.RechBox.setObjectName("RechBox")
+        self.wetLine = QtWidgets.QLineEdit(self.centralWidget)
+        self.wetLine.setGeometry(QtCore.QRect(200, 170, 91, 29))
+        font = QtGui.QFont()
+        font.setBold(False)
+        font.setWeight(50)
+        self.wetLine.setFont(font)
+        self.wetLine.setObjectName("wetLine")
+        self.hetLine = QtWidgets.QLineEdit(self.centralWidget)
+        self.hetLine.setGeometry(QtCore.QRect(320, 170, 91, 29))
+        font = QtGui.QFont()
+        font.setBold(False)
+        font.setWeight(50)
+        self.hetLine.setFont(font)
+        self.hetLine.setObjectName("hetLine")
+        self.mulLal = QtWidgets.QLabel(self.centralWidget)
+        self.mulLal.setGeometry(QtCore.QRect(300, 170, 16, 23))
+        font = QtGui.QFont()
+        font.setBold(False)
+        font.setWeight(50)
+        self.mulLal.setFont(font)
+        self.mulLal.setObjectName("mulLal")
         MainWindow.setCentralWidget(self.centralWidget)
 
         self.retranslateUi(MainWindow)
-        QMetaObject.connectSlotsByName(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
-        _translate = QCoreApplication.translate
+        _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "frames"))
         self.staBtn.setText(_translate("MainWindow", "Start"))
         self.colBtn.setText(_translate("MainWindow", "Pictures"))
-        self.colBtn.setEnabled(False)
+        self.RechBox.setText(_translate("MainWindow", "Resize Picture"))
+        self.mulLal.setText(_translate("MainWindow", "x"))
+
+import icon_rc
 
 if __name__ == "__main__":
     import sys
-    app = QApplication(sys.argv)
-    MainWindow = QMainWindow()
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
     MainWindow.show()
