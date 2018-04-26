@@ -1,17 +1,17 @@
-missing module named resource - imported by posix, I:\py_projects\frames\frames.py
-missing module named posix - imported by os, I:\py_projects\frames\frames.py
-missing module named _posixsubprocess - imported by subprocess, I:\py_projects\frames\frames.py
-missing module named org - imported by pickle, I:\py_projects\frames\frames.py
-missing module named readline - imported by cmd, code, pdb, I:\py_projects\frames\frames.py
-excluded module named _frozen_importlib - imported by importlib, importlib.abc, I:\py_projects\frames\frames.py
-missing module named _frozen_importlib_external - imported by importlib._bootstrap, importlib, importlib.abc, I:\py_projects\frames\frames.py
-missing module named _winreg - imported by platform, I:\py_projects\frames\frames.py
+missing module named resource - imported by posix, E:\study_data\py_projects\frames\frames.py
+missing module named posix - imported by os, E:\study_data\py_projects\frames\frames.py
+missing module named _posixsubprocess - imported by subprocess, E:\study_data\py_projects\frames\frames.py
+missing module named 'org.python' - imported by pickle, E:\study_data\py_projects\frames\frames.py, xml.sax
+missing module named readline - imported by cmd, code, pdb, E:\study_data\py_projects\frames\frames.py
+excluded module named _frozen_importlib - imported by importlib, importlib.abc, E:\study_data\py_projects\frames\frames.py
+missing module named _frozen_importlib_external - imported by importlib._bootstrap, importlib, importlib.abc, E:\study_data\py_projects\frames\frames.py
+missing module named _winreg - imported by platform, E:\study_data\py_projects\frames\frames.py
 missing module named _scproxy - imported by urllib.request
-missing module named java - imported by platform, I:\py_projects\frames\frames.py
-missing module named 'java.lang' - imported by platform, I:\py_projects\frames\frames.py, xml.sax._exceptions
-missing module named vms_lib - imported by platform, I:\py_projects\frames\frames.py
-missing module named termios - imported by tty, I:\py_projects\frames\frames.py, getpass
-missing module named grp - imported by tarfile, shutil, I:\py_projects\frames\frames.py
-missing module named pwd - imported by posixpath, tarfile, shutil, http.server, webbrowser, I:\py_projects\frames\frames.py, netrc, getpass
-missing module named _dummy_threading - imported by dummy_threading, I:\py_projects\frames\frames.py
-missing module named 'org.python' - imported by copy, I:\py_projects\frames\frames.py, xml.sax
+missing module named java - imported by platform, E:\study_data\py_projects\frames\frames.py
+missing module named 'java.lang' - imported by platform, E:\study_data\py_projects\frames\frames.py, xml.sax._exceptions
+missing module named vms_lib - imported by platform, E:\study_data\py_projects\frames\frames.py
+missing module named termios - imported by tty, E:\study_data\py_projects\frames\frames.py, getpass
+missing module named grp - imported by shutil, tarfile, E:\study_data\py_projects\frames\frames.py
+missing module named pwd - imported by posixpath, shutil, tarfile, http.server, webbrowser, E:\study_data\py_projects\frames\frames.py, netrc, getpass
+missing module named org - imported by copy, E:\study_data\py_projects\frames\frames.py
+missing module named _dummy_threading - imported by dummy_threading, E:\study_data\py_projects\frames\frames.py

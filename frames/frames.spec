@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['frames.py'],
-             pathex=['I:\\py_projects\\frames'],
+             pathex=['E:\\study_data\\py_projects\\frames'],
              binaries=[],
              datas=[],
              hiddenimports=[],

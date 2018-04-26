@@ -4,7 +4,8 @@
 Module implementing Main_frames.
 """
 from PyQt5.QtWidgets import QMainWindow, QFileDialog,QApplication, QMessageBox
-
+from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QPalette
 from Ui_UI_frames import Ui_MainWindow
 import sys
 import os
@@ -35,6 +36,8 @@ class Main_frames(QMainWindow, Ui_MainWindow):
         self.LoadBtn.clicked.connect(self.openFile)      
         self.staBtn.clicked.connect(self.segm)
         self.colBtn.clicked.connect(self.openFra)
+        # self.reCkb.toggle()
+        self.reCkb.stateChanged.connect(self.showPicSize)
 
     def openFile(self):
         fname = QFileDialog.getOpenFileName(self, "Select Video", "./","video(*.avi *.mov *.mpeg *.mpg *.wmv *.mp4 *.264 *.265 *.flv)")
@@ -66,12 +69,27 @@ class Main_frames(QMainWindow, Ui_MainWindow):
             QMessageBox.warning(self, "No File", "No File was Selected!")
             return
 
-       
-        os.system("ffmpeg -i " + filename + " frames/out-%6d.jpg")
-        if os.path.exists(".\\frames\\out-000001.jpg"):
-            self.colBtn.setEnabled(True)
+        # 重新设置了图片大小
+        if self.reCkb.isChecked():
+            weight = self.weiLinE.text()
+            height = self.heiLinE.text()
+
+            if weight == "" or height == "":
+                QMessageBox.warning(self, "parameter warning", "You need to enter the picture size!")
+                return
+            os.system("ffmpeg -i " + filename + " -s " + weight + "*" + height + " frames/out-%6d.jpg")
+
+            if os.path.exists(".\\frames\\out-000001.jpg"):
+                self.colBtn.setEnabled(True)
+            else:
+                QMessageBox.warning(self, "ffmpeg warning", "You need to add ffmpeg to your computer Environment Variables!")
         else:
-            QMessageBox.warning(self, "ffmpeg warning", "You need to add ffmpeg to your computer Environment Variables!")
+            # 没设置图片大小
+            os.system("ffmpeg -i " + filename + " frames/out-%6d.jpg")
+            if os.path.exists(".\\frames\\out-000001.jpg"):
+                self.colBtn.setEnabled(True)
+            else:
+                QMessageBox.warning(self, "ffmpeg warning", "You need to add ffmpeg to your computer Environment Variables!")
 
 
     def openFra(self):
@@ -88,6 +106,28 @@ class Main_frames(QMainWindow, Ui_MainWindow):
         os.system("open.bat")
         '''
         
+    def showPicSize(self, state):
+        if state == Qt.Checked:
+            self.weiLinE.setEnabled(True)
+            self.weiLinE.setFocus()# 默认选择
+            self.weiLinE.setPlaceholderText("1280")
+            self.heiLinE.setEnabled(True)
+            self.heiLinE.setPlaceholderText("720")
+            self.mulLal.setEnabled(True)
+            # self.reCkb.setColor(QPalette.WindowText, Qt.black)
+        else:
+            self.weiLinE.setEnabled(False)
+            self.weiLinE.setPlaceholderText("")
+            self.heiLinE.setEnabled(False)
+            self.heiLinE.setPlaceholderText("")
+            self.mulLal.setEnabled(False)
+            # self.reCkb.setColor(QPalette.WindowText, Qt.gray)
+'''
+    def transWH(self, state):
+        if state == Qt.Checked:
+            weight = self.weiLinE.Text()
+            height = self.heiLinE.Text()
+        return weight, height'''
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

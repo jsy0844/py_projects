@@ -76,15 +76,18 @@ class Ui_MainWindow(object):
         self.weiLinE.setGeometry(190, 170, 81, 29)
         self.weiLinE.setFont(font)
         self.weiLinE.setObjectName("weiLinE")
+        
         self.heiLinE = QLineEdit(self.centralWidget)
         self.heiLinE.setEnabled(False)
         self.heiLinE.setGeometry(310, 170, 81, 29)
         self.heiLinE.setFont(font)
         self.heiLinE.setObjectName("heiLinE")
+        
         self.mulLal = QLabel(self.centralWidget)
-        self.mulLal.setGeometry(290, 170, 16, 23)
+        self.mulLal.setGeometry(285, 170, 16, 23)
         self.mulLal.setFont(font)
         self.mulLal.setObjectName("mulLal")
+        self.mulLal.setEnabled(False)
 
         MainWindow.setCentralWidget(self.centralWidget)
 
