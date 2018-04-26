@@ -36,8 +36,7 @@ class Main_frames(QMainWindow, Ui_MainWindow):
         self.LoadBtn.clicked.connect(self.openFile)      
         self.staBtn.clicked.connect(self.segm)
         self.colBtn.clicked.connect(self.openFra)
-        # self.reCkb.toggle()
-        self.reCkb.stateChanged.connect(self.showPicSize)
+        self.reCkb.toggled.connect(self.showPicSize)
 
     def openFile(self):
         fname = QFileDialog.getOpenFileName(self, "Select Video", "./","video(*.avi *.mov *.mpeg *.mpg *.wmv *.mp4 *.264 *.265 *.flv)")
@@ -107,7 +106,7 @@ class Main_frames(QMainWindow, Ui_MainWindow):
         '''
         
     def showPicSize(self, state):
-        if state == Qt.Checked:
+        if self.reCkb.isChecked():
             self.weiLinE.setEnabled(True)
             self.weiLinE.setFocus()# 默认选择
             self.weiLinE.setPlaceholderText("1280")

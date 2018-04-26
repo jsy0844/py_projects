@@ -7,7 +7,7 @@
 # WARNING! All changes made in this file will be lost!
 import icon_rc
 from PyQt5.QtGui import QIcon, QPixmap, QFont
-from PyQt5.QtWidgets import QWidget, QTextBrowser, QPushButton, QApplication, QMainWindow, QCheckBox, QLineEdit, QLabel
+from PyQt5.QtWidgets import QWidget, QTextBrowser, QPushButton, QApplication, QMainWindow, QRadioButton, QLineEdit, QLabel
 from PyQt5.QtCore import QSize, QCoreApplication, QMetaObject
 
 
@@ -64,7 +64,7 @@ class Ui_MainWindow(object):
         self.colBtn.setEnabled(False)
 
         # 图片大小选框
-        self.reCkb = QCheckBox(self.centralWidget)
+        self.reCkb = QRadioButton(self.centralWidget)
         self.reCkb.setGeometry(190, 120, 171, 27)
         font.setPointSize(9)
         self.reCkb.setFont(font)
