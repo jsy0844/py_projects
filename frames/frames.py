@@ -39,7 +39,7 @@ class Main_frames(QMainWindow, Ui_MainWindow):
         self.reCkb.toggled.connect(self.showPicSize)
 
     def openFile(self):
-        fname = QFileDialog.getOpenFileName(self, "Select Video", "./","video(*.avi *.mov *.mpeg *.mpg *.wmv *.mp4 *.264 *.265 *.flv)")
+        fname = QFileDialog.getOpenFileName(self, "Select Video", "","video(*.avi *.mov *.mpeg *.mpg *.wmv *.mp4 *.264 *.265 *.flv)")
         self.fileText.setText(fname[0])
         global fnamen
         fnamen = fname[0]

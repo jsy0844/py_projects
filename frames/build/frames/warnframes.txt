@@ -1,7 +1,7 @@
 missing module named resource - imported by posix, E:\study_data\py_projects\frames\frames.py
 missing module named posix - imported by os, E:\study_data\py_projects\frames\frames.py
 missing module named _posixsubprocess - imported by subprocess, E:\study_data\py_projects\frames\frames.py
-missing module named org - imported by pickle, E:\study_data\py_projects\frames\frames.py
+missing module named 'org.python' - imported by pickle, E:\study_data\py_projects\frames\frames.py, xml.sax
 missing module named readline - imported by cmd, code, pdb, E:\study_data\py_projects\frames\frames.py
 excluded module named _frozen_importlib - imported by importlib, importlib.abc, E:\study_data\py_projects\frames\frames.py
 missing module named _frozen_importlib_external - imported by importlib._bootstrap, importlib, importlib.abc, E:\study_data\py_projects\frames\frames.py
@@ -14,4 +14,4 @@ missing module named termios - imported by tty, E:\study_data\py_projects\frames
 missing module named grp - imported by shutil, tarfile, E:\study_data\py_projects\frames\frames.py
 missing module named pwd - imported by posixpath, shutil, tarfile, http.server, webbrowser, E:\study_data\py_projects\frames\frames.py, netrc, getpass
 missing module named _dummy_threading - imported by dummy_threading, E:\study_data\py_projects\frames\frames.py
-missing module named 'org.python' - imported by copy, E:\study_data\py_projects\frames\frames.py, xml.sax
+missing module named org - imported by copy, E:\study_data\py_projects\frames\frames.py
